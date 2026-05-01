@@ -17,7 +17,7 @@ body{
     padding-right: calc(50% - 600px) !important;
 }
 
-.top{
+.hero-top{
     background-color: #E1FF8F;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,7 +25,7 @@ body{
     min-height: 800px;
 }
 
-.top__container{
+.hero-container{
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
@@ -36,7 +36,7 @@ body{
     max-width: 769px;
 }
 
-.hero__stars{
+.hero-stars{
     position: absolute;
     top: 0;
     left: 0;
@@ -116,11 +116,53 @@ body{
     text-align: center;
 }
 
+.stars-about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.stars{
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.stars-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.stars--1{
+    top: 5%;
+    left: 68%;
+}
+
+.stars--2{
+    top: 54%;
+    left: 1%;
+}
+
+.stars--3{
+    top: 57%;
+    left: 2%;
+}
+
 .about{
     background-color: #202027;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;  /* ← добавить */
+    overflow: hidden;
+    z-index: 1; 
 }
 
 .about__game{
@@ -140,6 +182,7 @@ body{
     line-height: 32px;
     text-align: left;
     margin-bottom: 72px;
+    max-width: 788px;
 }
 
 .games{
@@ -147,6 +190,8 @@ body{
     flex-wrap: wrap;
     column-gap: 32px;
     padding-bottom: 144px;
+    position: relative;
+    z-index: 1;
 }
 
 .game{
