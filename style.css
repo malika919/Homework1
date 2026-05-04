@@ -56,6 +56,10 @@ body{
     height: auto;
 }
 
+.star-mb{
+    display: none;
+}
+
 .star-1{
     right: 0;
 }
@@ -105,7 +109,7 @@ body{
     font-size: 24px;
 }
 
-.hero__btn{
+.hero__btn-link{
     outline: none;
     box-sizing: border-box;
     border: 1px solid rgba(32, 32, 39, 1);
@@ -194,6 +198,10 @@ body{
     max-width: 788px;
 }
 
+.about__gamemobil{
+    display: none;
+}
+
 .games{
     display: flex;
     flex-wrap: wrap;
@@ -266,6 +274,10 @@ body{
     margin-left: 32px;
 }
 
+.game__btn{
+    display: none;
+}
+
 .footer{
     background-color: #BDED35;
     background-position: center;
@@ -284,3 +296,214 @@ body{
     line-height: 29px;
     text-align: center;
 }
+
+@media (max-width: 430px){
+    .center{
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .star{
+        display: none;
+    }
+
+    .star-mobil{
+        display: block;
+        right: 0;
+    }
+
+    .star-mb{
+        position: absolute;
+        width: auto; 
+        height: auto;
+        display: block;
+    }
+
+    .star-mobil-2{
+        top: 18%;
+        left: 24%;
+    }
+
+    .star-mobil-3{
+        top: 25%;
+        left: 10%;
+    }
+
+    .star-mobil-4{
+        top: 109%;
+        left: 73%;
+    }
+
+    .star-mobil-5{
+        top: 114%;
+        left: 81%;
+    }
+
+    .hero{
+        padding-top: 147px !important;
+    }
+
+    .hero__heading{
+        font-size: 40px;
+        line-height: 49px;
+        text-align: center;
+        max-width: 262px;
+        margin: 0 auto 24px auto;  /* ← центрирование */
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+
+    .hero__text{
+        color: rgba(32, 32, 39, 1);
+        font-size: 16px;
+        margin-bottom: 36px;
+        line-height: 19px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .hero__span{
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .hero__btn-link{
+        width: 285px;
+        height: 55px;
+        box-sizing: border-box;
+        border: 1px solid rgba(32, 32, 39, 1);
+        border-radius: 60px;
+        background: rgba(32, 32, 39, 1);
+        color: rgba(255, 255, 255, 1);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 141.69%;
+        text-align: center;
+    }
+
+    .hero__btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    .about__gamemobil{
+        color: rgba(255, 255, 255, 1);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 49px;
+        text-align: left;
+        display: block;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    
+    .games{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+        align-content: center;
+
+    }
+
+    .game:nth-child(5){
+        margin-top: 0;
+    }
+
+    .game{
+        max-width: 343px;
+    }
+
+    .game:first-child{
+        height: 529px;
+    }
+
+    .game:nth-child(2){
+        height: 568px;
+    }
+
+    .game:nth-child(3){
+        height: 568px;
+    }
+
+    .game:nth-child(4){
+        height: 607px;
+    }
+
+    .game:nth-child(5){
+        height: 568px;
+    }
+
+    .game:last-child{
+        height: 627px;
+    }
+
+    .game__img{
+        max-width: 343px;
+        min-height: 285px;
+    }
+
+    .game__number{
+        display: none;
+    }
+
+    .game__spanmobile{
+        display: block;       
+        white-space: normal;
+    }
+
+    .game__text{
+        color: rgba(0, 0, 0, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: left;
+        padding-left: 29px;
+        padding-right: 29px;
+    }
+
+    .game__btn{
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    .game__btn-play{
+        box-sizing: border-box;
+        border: 1px solid rgba(32, 32, 39, 1);
+        border-radius: 60px;
+        background: rgba(32, 32, 39, 1);
+        color: rgba(255, 255, 255, 1);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 141.69%;
+        text-align: center;
+        width: 285px;
+        height: 55px;
+    }
+
+    .about__game{
+        display: none;
+    }
+
+    .about__gameinfo{
+        display: none;
+    }
+
+    .stars-container{
+        display: none;
+    }
+
+    .footer{
+        min-height: 100px;
+    }
+
+    .footer__text{
+        font-size: 16px;
+    }
+
+}
+
