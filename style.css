@@ -11,6 +11,10 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+button {
+    font-family: inherit;
+}
+
 .star-center{
     padding-left: calc(50% - 720px) !important;  
     padding-right: calc(50% - 720px) !important;
