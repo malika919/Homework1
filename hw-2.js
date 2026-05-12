@@ -79,3 +79,16 @@ if (clientOS === 0 && clientDeviceYear < 2015){
     alert('Установите версию приложения для Android по ссылке')
 }
 
+let userMessage = prompt('введите соощение')
+
+while (userMessage = true){
+    if (userMessage === 'break'){
+        break;
+    }
+    console.log(userMessage)
+    if (userMessage === 'continue'){
+        continue;
+    }
+
+    break
+}
