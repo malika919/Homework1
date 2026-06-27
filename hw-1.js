@@ -20,7 +20,7 @@ let result = 2 ** 5;
 alert(result) //5
 
 let a2 = 9;
-let b2 = 2;
+let b2 = 2; 
 alert(a2 % b2) //6
 
 let num = 1;

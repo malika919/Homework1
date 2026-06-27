@@ -133,6 +133,11 @@ button {
     cursor: pointer;
 }
 
+.hero__btn-link:hover{
+    background-color: white;
+    color: black;
+}
+
 .stars-about {
     position: absolute;
     top: 0;
