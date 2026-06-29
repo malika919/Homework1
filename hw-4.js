@@ -58,8 +58,32 @@ function cubeNumber () {
 console.log(cubeNumber());
 
 // 7 задание 
+function getArea () {
+    return this.radius*3.14
+}
+
+function getPerimeter () {
+    return this.radius*2
+}
+
+const circle2 = {
+    radius: 24,
+    getArea: getArea,
+    getPerimeter: getPerimeter,
+}
+
+console.log(`Площадь окружности равна ${circle2.getArea()}, а периметр равен - ${circle2.getPerimeter()}`)
+
+const circle3 = {
+    radius: 23, 
+    getArea: getArea, 
+    getPerimeter: getPerimeter, 
+}
+
+console.log(`Площадь окружности равна ${circle3.getArea()}, а периметр равен - ${circle3.getPerimeter()}`)
+
 const circle1 = {
-    radius: 23,
+    radius: 27,
     getArea: function() {
         return this.radius * 3.14
     },
