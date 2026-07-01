@@ -148,7 +148,8 @@
                 </a>
                 <div class="games-list__info">
                     <h3 class="games-list__title">Угадай число</h3>
-                    <p class="games-list__description">Попробуй угадать случайное<span class="games-list__span"> число от 1
+                    <p class="games-list__description">Попробуй угадать случайное<span class="games-list__span"> число
+                            от 1
                             до 100.</span></p>
                     <div class="games-list__button-wrapper">
                         <button class="games-list__play-button">Играть!</button>
@@ -173,7 +174,8 @@
                 </a>
                 <div class="games-list__info">
                     <h3 class="games-list__title">Переверни <span class="games-list__spanmobile">текст</span></h3>
-                    <p class="games-list__description">Попробуй ввести текст, который <span class="games-list__span">будет
+                    <p class="games-list__description">Попробуй ввести текст, который <span
+                            class="games-list__span">будет
                             перевернут.</span></p>
                     <div class="games-list__button-wrapper">
                         <button class="games-list__play-button">Играть!</button>
@@ -208,7 +210,43 @@
                     <p class="games-list__description">Отвечай на вопросы викторины <span class="games-list__span">с
                             вариантами ответов.</span></p>
                     <div class="games-list__button-wrapper">
-                        <button class="games-list__play-button">Играть!</button>
+                        <button onclick="quizGame()" class="games-list__play-button">Играть!</button>
+                        <script>
+                            const quiz = [
+                                {
+                                    question: "Какой цвет небо?",
+                                    options: ["1. Красный", "2. Синий", "3. Зеленый"],
+                                    correctAnswer: 2 // номер правильного ответа
+                                },
+                                {
+                                    question: "Сколько дней в неделе?",
+                                    options: ["1. Шесть", "2. Семь", "3. Восемь"],
+                                    correctAnswer: 2
+                                },
+                                {
+                                    question: "Сколько у человека пальцев на одной руке?",
+                                    options: ["1. Четыре", "2. Пять", "3. Шесть"],
+                                    correctAnswer: 2
+                                }
+                            ];
+
+                            let correctCount = 0;
+
+                            function quizGame() {
+
+                                for (let i = 0; i < quiz.length; i++) {
+                                    let promptQuestion = alert(quiz[i].question + "\n" + quiz[i].options[0] + "\n"
+                                        + quiz[i].options[1] + "\n" + quiz[i].options[2]
+                                    )
+                                    let userAnswer = +prompt('Введите ваш ответ: ')
+
+                                    if (userAnswer === quiz[i].correctAnswer) {
+                                        correctCount++
+                                    }
+                                }
+                                alert(`Количество правильных ответов равно: ${correctCount}`)
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
@@ -235,4 +273,5 @@
         <h4 class="footer__text">Все права защищены.</h4>
     </footer>
 </body>
+
 </html>
