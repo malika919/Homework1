@@ -29,7 +29,7 @@ for (let i = 0; i < 3; i++) {
     }
     results.push(row)
 }
-console.log(results)
+console.log(results) //доработать 
 
 //5 задание
 const arr_1 = [1, 1, 1];

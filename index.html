@@ -113,7 +113,7 @@
                 </h3>
                 <p class="game__text">Отвечай на вопросы викторины с вариантами ответов.</p>
                 <div class="game__btn">
-                    <button class="game__btn-play">Играть!</button>
+                    <button class="game__btn-play" onclick="quizGame()">Играть!</button>
                 </div>
             </div>
             <div class="game game_3">
@@ -211,42 +211,6 @@
                             вариантами ответов.</span></p>
                     <div class="games-list__button-wrapper">
                         <button onclick="quizGame()" class="games-list__play-button">Играть!</button>
-                        <script>
-                            const quiz = [
-                                {
-                                    question: "Какой цвет небо?",
-                                    options: ["1. Красный", "2. Синий", "3. Зеленый"],
-                                    correctAnswer: 2 // номер правильного ответа
-                                },
-                                {
-                                    question: "Сколько дней в неделе?",
-                                    options: ["1. Шесть", "2. Семь", "3. Восемь"],
-                                    correctAnswer: 2
-                                },
-                                {
-                                    question: "Сколько у человека пальцев на одной руке?",
-                                    options: ["1. Четыре", "2. Пять", "3. Шесть"],
-                                    correctAnswer: 2
-                                }
-                            ];
-
-                            let correctCount = 0;
-
-                            function quizGame() {
-
-                                for (let i = 0; i < quiz.length; i++) {
-                                    let promptQuestion = alert(quiz[i].question + "\n" + quiz[i].options[0] + "\n"
-                                        + quiz[i].options[1] + "\n" + quiz[i].options[2]
-                                    )
-                                    let userAnswer = +prompt('Введите ваш ответ: ')
-
-                                    if (userAnswer === quiz[i].correctAnswer) {
-                                        correctCount++
-                                    }
-                                }
-                                alert(`Количество правильных ответов равно: ${correctCount}`)
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
@@ -273,5 +237,40 @@
         <h4 class="footer__text">Все права защищены.</h4>
     </footer>
 </body>
+<script>
+    const quiz = [
+        {
+            question: "Какой цвет небо?",
+            options: ["1. Красный", "2. Синий", "3. Зеленый"],
+            correctAnswer: 2 // номер правильного ответа
+        },
+        {
+            question: "Сколько дней в неделе?",
+            options: ["1. Шесть", "2. Семь", "3. Восемь"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько у человека пальцев на одной руке?",
+            options: ["1. Четыре", "2. Пять", "3. Шесть"],
+            correctAnswer: 2
+        }
+    ];
 
+    let correctCount = 0;
+
+    function quizGame() {
+
+        for (let i = 0; i < quiz.length; i++) {
+            let promptQuestion = alert(quiz[i].question + "\n" + quiz[i].options[0] + "\n"
+                + quiz[i].options[1] + "\n" + quiz[i].options[2]
+            )
+            let userAnswer = +prompt('Введите ваш ответ: ')
+
+            if (userAnswer === quiz[i].correctAnswer) {
+                correctCount++
+            }
+        }
+        alert(`Количество правильных ответов равно: ${correctCount}`)
+    }
+</script>
 </html>
