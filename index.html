@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="game game_2">
-                <a href="#" class="game__card">
+                <a href="#quiz" class="game__card">
                     <img src="images/game-5.png" alt="игра в простую викторину" class="game__img">
                 </a>
                 <button class="game__number">Игра № 5</button>
@@ -202,7 +202,7 @@
                 <a href="#" class="games-list__card">
                     <img src="images/mini-play-5.png" alt="игра в простую викторину" class="games-list__image">
                 </a>
-                <div class="games-list__info">
+                <div id="quiz" class="games-list__info">
                     <h3 class="games-list__title">
                         <span class="games-list__span">Простая </span>
                         <span class="games-list__span">викторина</span>
@@ -264,13 +264,20 @@
             let promptQuestion = alert(quiz[i].question + "\n" + quiz[i].options[0] + "\n"
                 + quiz[i].options[1] + "\n" + quiz[i].options[2]
             )
-            let userAnswer = +prompt('Введите ваш ответ: ')
+            let userAnswer = prompt('Введите ваш ответ: ')
 
-            if (userAnswer === quiz[i].correctAnswer) {
+            if (userAnswer === null) {
+                return;
+            }
+
+            let changeUserAnswer = Number(userAnswer)
+
+            if (changeUserAnswer === quiz[i].correctAnswer) {
                 correctCount++
             }
         }
         alert(`Количество правильных ответов равно: ${correctCount}`)
     }
 </script>
+
 </html>

@@ -68,11 +68,18 @@ for (item of multiArr){
 }
 console.log(result)
 
+for (let j = 0; j < multiArr.length; j++) {
+    result.push(...multiArr[j])
+}
+console.log(result)
+
+console.log(multiArr.flat())
+
 //10 задание 
 const redArr = [1, 8, 9, 2, 4, 3];
 for (let i = 0; i < redArr.length - 1; i++) {
-    if (redArr[i] === 3){
-        break
+    if (redArr[i] === 3){ //(redArr[i+1]) 
+        break 
     }
     let res1 = redArr[i] + redArr[(i + 1)];
     console.log(res1)
