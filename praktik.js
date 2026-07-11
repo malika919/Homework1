@@ -74,3 +74,6 @@ const removeFalsy = () => {
     console.log(newArr)
 }
 removeFalsy()
+
+let date = new Date();
+console.log(date)
