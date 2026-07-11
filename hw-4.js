@@ -1,4 +1,4 @@
-// 1 задание
+  // 1 задание
 const minNumber = (a, b) => {
     console.log (a < b ? a : b)
 }
@@ -44,7 +44,7 @@ const multNumber = (a, b) => {
     return Number(a) && Number(b) ? a*b : 'Одно или оба значения не являются числом'
 }
 
-console.log(multNumber(6, 8))
+console.log(multNumber(6,  8))
 
 // 6 задание 
 function cubeNumber () {
