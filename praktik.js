@@ -77,3 +77,54 @@ removeFalsy()
 
 let date = new Date();
 console.log(date)
+
+function callbackWithArrayLength(arr, callback) {
+    const lenArr = callback(arr.length)
+    console.log(lenArr)
+}
+
+callbackWithArrayLength([1], (length) => {
+	console.log(length);
+});
+
+callbackWithArrayLength([1, 1], (len) => {
+	console.log(len);
+});
+callbackWithArrayLength([1, 1, 1, 1, 1], (l) => {
+	console.log(l);
+});
+
+function log(arrItem) {
+	console.log("Элемент массива:", arrItem);
+}
+
+function each(arr, cb) {
+	for (let i = 0; i < arr.length; i++) {
+		cb(arr[i]);
+	}
+}
+each(["Глеб", "Олег", "Татьяна", "Платон"], log);
+
+const timer = (deadline) => {
+   if (isNaN(+deadline)) { // + − приводим значение к number, если это NaN,
+      console.log('Передано некорректное число'); // выводим сообщение
+      return; // Выходим из функции
+   }
+
+   let time = deadline;
+   const interval = setInterval(() => {
+      time -= 1;
+      console.log(time);
+   }, 1000);
+
+
+
+
+setTimeout(() => {
+      clearInterval(interval);
+      console.log('Время истекло!')
+   }, deadline * 1000)
+};
+
+const deadline = prompt('На сколько секунд вы хотите поставить таймер?');
+timer(deadline);

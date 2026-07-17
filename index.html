@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="game game_3">
-                <a href="#" class="game__card">
+                <a href="#choice" class="game__card">
                     <img src="images/game-4.png" alt="игра в камень, ножницы, бумага" class="game__img">
                 </a>
                 <button class="game__number">Игра № 4</button>
@@ -99,7 +99,7 @@
                 </h3>
                 <p class="game__text">Сыграй в популярную игру против компьютера.</p>
                 <div class="game__btn">
-                    <button class="game__btn-play">Играть!</button>
+                    <button onclick="gameOfChoice()" class="game__btn-play">Играть!</button>
                 </div>
             </div>
             <div class="game game_2">
@@ -186,7 +186,7 @@
                 <a href="#" class="games-list__card">
                     <img src="images/mini-play-4.png" alt="игра в камень, ножницы, бумага" class="games-list__image">
                 </a>
-                <div class="games-list__info">
+                <div id="choice" class="games-list__info">
                     <h3 class="games-list__title">
                         <span class="games-list__span">Камень,</span>
                         <span class="games-list__span">ножницы,</span>
@@ -194,7 +194,7 @@
                     </h3>
                     <p class="games-list__description">Сыграй в популярную игру против компьютера.</p>
                     <div class="games-list__button-wrapper">
-                        <button class="games-list__play-button">Играть!</button>
+                        <button onclick="gameOfChoice()" class="games-list__play-button">Играть!</button>
                     </div>
                 </div>
             </div>
@@ -238,6 +238,30 @@
     </footer>
 </body>
 <script>
+    //камень, ножницы, бумага
+    const choiseArr = ["камень", "ножницы", "бумага"];
+
+    function gameOfChoice() {
+        let choicePrompt = (choiseArr[0] + "\n" + choiseArr[1] + "\n" + choiseArr[2])
+        let generationComputerChoice = Math.floor(Math.random() * choiseArr.length)
+        let userChoice = prompt(`${choicePrompt} 
+        Введите ответ: `)
+
+        if (userChoice === null) {
+            return;
+        }
+
+        userChoice.toLowerCase() === choiseArr[generationComputerChoice].toLowerCase() ? alert('Ничья') :
+            choiseArr[generationComputerChoice].toLowerCase() === 'камень' && userChoice.toLowerCase() === choiseArr[1] ? alert('Вы прогирали') :
+                userChoice === choiseArr[0].toLowerCase() && choiseArr[generationComputerChoice].toLowerCase() === 'ножницы' ? alert('Вы победили') :
+                    choiseArr[generationComputerChoice].toLowerCase() === 'ножницы' && userChoice.toLowerCase() === choiseArr[2] ? alert('Вы проиграли') :
+                        userChoice === choiseArr[1].toLowerCase() && choiseArr[generationComputerChoice].toLowerCase() === 'бумага' ? alert('Вы победили') :
+                            choiseArr[generationComputerChoice].toLowerCase() === 'бумага' && userChoice.toLowerCase() === choiseArr[0] ? alert('Вы проиграли') :
+                                userChoice === choiseArr[2].toLowerCase() && choiseArr[generationComputerChoice].toLowerCase() === 'камень' ? alert('Вы победили') :
+                                    alert('Вы ввели некорректное значение')
+    }
+
+    //угадай число
     let generationNumber = Math.floor(Math.random() * 101)
 
     const guessWordFunction = () => {
@@ -253,9 +277,14 @@
             numberGetUserResponse > generationNumber ? alert('Число должно быть меньше') :
                 numberGetUserResponse < generationNumber ? alert('Число должо быть больше') :
                     numberGetUserResponse === generationNumber ? alert('Вы угадали число') : alert('Вы не угадали число, попробуйте еще раз')
+
+            if (numberGetUserResponse === generationNumber) {
+                return;
+            }
         }
     }
 
+    //простая арифметика
     let operator = ['+', '-', '*', '/']
 
     const simpleArithmeticFunction = () => {
@@ -273,7 +302,7 @@
 
             let userNumberAnswerDigit = Number(userNumberAnswer)
             if (userNumberAnswerDigit === num1 + num2 || userNumberAnswerDigit === num1 - num2 ||
-                userNumberAnswerDigit === num1 * num2 || userNumberAnswerDigit === num1 / num2){
+                userNumberAnswerDigit === num1 * num2 || userNumberAnswerDigit === num1 / num2) {
                 alert('Все верно)')
             } else {
                 alert('Неверно(, попробуй еще раз')
@@ -283,20 +312,22 @@
                 operator[randomOperator] === '-' ? alert(`Правильный ответ: ${num1 - num2}`) :
                     operator[randomOperator] === '*' ? alert(`Правильный ответ: ${num1 * num2}`) :
                         operator[randomOperator] === '/' ? alert(`Правильный ответ: ${num1 / num2}`) :
-                        false
+                            false
         }
     }
 
+    //переверни текст
     function flipTextFunction() {
         let userEnterText = prompt('Введите слово: ')
         alert(`Перевернутый текст: ${userEnterText.split("").reverse().join("")}`);
-        
-        if(userEnterText === null){
+
+        if (userEnterText === null) {
             return;
         }
 
     }
 
+    //простая викторина
     const quiz = [
         {
             question: "Какой цвет небо?",
@@ -320,10 +351,11 @@
     function quizGame() {
 
         for (let i = 0; i < quiz.length; i++) {
-            let promptQuestion = alert(quiz[i].question + "\n" + quiz[i].options[0] + "\n"
+            let promptQuestion = (quiz[i].question + "\n" + quiz[i].options[0] + "\n"
                 + quiz[i].options[1] + "\n" + quiz[i].options[2]
             )
-            let userAnswer = prompt('Введите ваш ответ: ')
+            let userAnswer = prompt(`${promptQuestion}
+            Введите ваш ответ: `)
 
             if (userAnswer === null) {
                 return;
