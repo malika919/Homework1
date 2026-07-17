@@ -55,36 +55,36 @@
         </div>
         <div class="games">
             <div class="game game_1">
-                <a href="#" class="game__card">
+                <a href="#guess" class="game__card">
                     <img src="images/card1.png" alt="блоки с цифрами" class="game__img">
                 </a>
                 <button class="game__number">Игра № 1</button>
                 <h3 class="game__heading">Угадай число</h3>
                 <p class="game__text">Попробуй угадать случайное число от 1 до 100.</p>
                 <div class="game__btn">
-                    <button class="game__btn-play">Играть!</button>
+                    <button onclick="guessWordFunction()" class="game__btn-play">Играть!</button>
                 </div>
             </div>
             <div class="game game_2">
-                <a href="#" class="game__card">
+                <a href="#arithmetic" class="game__card">
                     <img src="images/game-2.png" alt="блоки с примерами" class="game__img">
                 </a>
                 <button class="game__number">Игра № 2</button>
                 <h3 class="game__heading">Простая арифметика</h3>
                 <p class="game__text">Попробуй решить простые арифметические задачи.</p>
                 <div class="game__btn">
-                    <button class="game__btn-play">Играть!</button>
+                    <button onclick="simpleArithmeticFunction()" class="game__btn-play">Играть!</button>
                 </div>
             </div>
             <div class="game game_1">
-                <a href="#" class="game__card">
+                <a href="#flip" class="game__card">
                     <img src="images/game-3.png" alt="слова в обратном порядке" class="game__img">
                 </a>
                 <button class="game__number">Игра № 3</button>
                 <h3 class="game__heading">Переверни <span class="game__spanmobile">текст</span></h3>
                 <p class="game__text">Попробуй ввести текст, который будет перевернут.</p>
                 <div class="game__btn">
-                    <button class="game__btn-play">Играть!</button>
+                    <button onclick="flipTextFunction()" class="game__btn-play">Играть!</button>
                 </div>
             </div>
             <div class="game game_3">
@@ -146,7 +146,7 @@
                 <a href="#" class="games-list__card">
                     <img src="images/mini-play-1.png" alt="блоки с цифрами" class="games-list__image">
                 </a>
-                <div class="games-list__info">
+                <div id="guess" class="games-list__info">
                     <h3 class="games-list__title">Угадай число</h3>
                     <p class="games-list__description">Попробуй угадать случайное<span class="games-list__span"> число
                             от 1
@@ -160,7 +160,7 @@
                 <a href="#" class="games-list__card">
                     <img src="images/mini-play-2.png" alt="блоки с примерами" class="games-list__image">
                 </a>
-                <div class="games-list__info">
+                <div id="arithmetic" class="games-list__info">
                     <h3 class="games-list__title">Простая арифметика</h3>
                     <p class="games-list__description">Попробуй решить простые арифметические задачи.</p>
                     <div class="games-list__button-wrapper">
@@ -172,7 +172,7 @@
                 <a href="#" class="games-list__card">
                     <img src="images/mini-play-3.png" alt="слова в обратном порядке" class="games-list__image">
                 </a>
-                <div class="games-list__info">
+                <div id="flip" class="games-list__info">
                     <h3 class="games-list__title">Переверни <span class="games-list__spanmobile">текст</span></h3>
                     <p class="games-list__description">Попробуй ввести текст, который <span
                             class="games-list__span">будет
